@@ -1,10 +1,20 @@
 # 🛰️ NEXUS — Painel de Dados em Tempo Real
 
+[![CI](https://github.com/ThiagoFernandes1/NEXUS/actions/workflows/ci.yml/badge.svg)](https://github.com/ThiagoFernandes1/NEXUS/actions/workflows/ci.yml)
+[![Python](https://img.shields.io/badge/python-3.11%2B-blue)](https://www.python.org)
+[![License: MIT](https://img.shields.io/badge/license-MIT-green)](LICENSE)
+
 Dashboard web profissional em Python que agrega **cinco APIs públicas reais** em uma única
 interface animada, com streaming ao vivo, cache persistente, histórico em banco de dados
 e testes automatizados.
 
 Nenhuma chave de API é necessária — todos os serviços usados são abertos.
+
+![Painel NEXUS](docs/screenshot.png)
+
+> Repare no log de atividade do canto inferior direito: a API da ISS deu *timeout* durante
+> a captura e o painel seguiu servindo o último dado válido, sem quebrar. Essa é a
+> degradação suave em ação.
 
 ---
 
@@ -111,7 +121,13 @@ então a suíte roda **offline** e sem consumir cota das APIs.
 ```
 NexusDashboard/
 ├── run.py                  ponto de entrada
+├── INICIAR.bat             atalho de um clique (Windows)
 ├── requirements.txt
+├── LICENSE
+├── .github/workflows/
+│   └── ci.yml              testes automáticos em Python 3.11, 3.12 e 3.13
+├── docs/
+│   └── screenshot.png
 ├── app/
 │   ├── config.py           configurações (env vars + defaults)
 │   ├── models.py           ORM: cache, métricas e eventos
